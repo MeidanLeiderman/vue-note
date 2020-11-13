@@ -1,0 +1,9 @@
+.note-toolbar-container{
+    margin-top: 1em;
+}
+
+.note-toolbar-container>*{
+    padding: 3px;
+    cursor: pointer;
+    margin-right: 1em;
+}

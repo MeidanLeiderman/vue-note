@@ -1,0 +1,51 @@
+/* Base */
+
+.note-form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 50%;
+    min-height: 60px;
+    margin:0 auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+}
+
+
+.input-box {
+    min-width: 60%;
+    outline: none;
+    height: 40px;
+    font-family: Lato;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.input-box:empty:before{
+    content: "What's on your mind?";
+    color: grey;
+    margin-left: 10px;
+}
+
+.button-container{
+    margin-right: 10px;
+}
+
+.button-container i{
+    padding: 5px;
+    cursor: pointer;
+    color: grey;
+}
+
+.button-container i:hover{
+    color: black;
+}
+
+@media screen and (min-width: 360px) and (max-width: 540px){
+    .note-form-container{
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+.note-edit-container{
+    max-width: 50%;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+
+}
+
+.note-edit-container .note-container{
+    border: none;
+    /* min-height: 100%; */
+    margin: 0;
+
+}

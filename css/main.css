@@ -1,0 +1,54 @@
+@import "./helpers.css";
+@import "./app-header.css";
+@import "./note-toolbar.css";
+@import "./note-containers.css";
+@import "./note-edit.css";
+@import "./note-list.css";
+@import "./new-note-form.css";
+@import "./type-filter.css";
+@import "./colour-palette.css";
+
+/* Layout */
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+input{
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    outline: none;
+    appearance: none;
+}
+
+hr, h1,h2,h3,h4,h5,h6{
+    margin:0;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}

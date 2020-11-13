@@ -1,0 +1,32 @@
+.note-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left:10px;
+}
+
+.note-list-section>*{
+    width: 100%;
+}
+
+
+.pinned-notes-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+.pinned-notes-container>*{
+    width: 100%;
+}
+
+.unpinned-notes-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.unpinned-notes-container>*{
+    width: 100%;
+}

@@ -1,0 +1,22 @@
+/* Basic */
+.type-filter-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+
+.type-filter-container .types-wraper{
+    display: flex;
+    flex-direction: row;
+}
+
+.types-wraper span{
+    min-width: 50px;
+    padding: 7px 3px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 7px;
+    cursor: pointer;
+}

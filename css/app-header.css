@@ -1,0 +1,155 @@
+/* Base */
+
+.app-header{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #A7D2C0;
+    margin-bottom: 0.5em;
+    height: 54px;
+}
+
+.logo{
+    padding: 16px 0;
+}
+
+
+/* Search Bar */
+.search-filter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    height: 3em;
+    outline: none;
+    font-family: Lato;
+}
+
+.search-filter i{
+    position: absolute;
+    left: 10px;
+}
+
+.search-filter .search-box{
+    padding: 11px 40px;
+    box-shadow: 0px 1px 7px rgba(0,0,0, 0.25);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.search-filter[placeholder]{
+    text-indent: 30px;
+    font-family: Lato;
+}
+
+.app-header .search-btn{ 
+    display: none;
+}
+
+
+/* NavBar */
+.navbar{
+    display: flex;
+    flex-direction: column; 
+    position: absolute;
+    top: 48px;
+    left: 0;
+    background-color: #A7D2C0;;
+    transform: translate(-100%, 0);
+    transition: all .6s ;
+    opacity: 0;
+
+}
+
+.navbar.navbar-open{
+    transform: translate(0, 0);
+    opacity: 1;
+
+}
+
+.navbar a{
+    height: 4em;
+    padding: 1.5em 1em;
+    max-width: 100px;
+    display: block;
+    color: black;
+}
+
+.navbar a:hover{
+    background-color: #E9EAEA;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 769px){
+    .app-header{
+        padding: 0 40px;
+    }
+
+    .search-filter{
+        margin-left: 4em;
+        width: 400px;
+        width: 50%;
+    }
+
+    .search-filter .search-box{
+        /* width: 400px; */
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 768px){
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 540px){
+    .app-header{
+        padding: 0 10px;
+        justify-content: flex-start;
+    }
+
+    .logo{
+        padding: 10px 30px;
+        order: 2;
+    }
+
+    .search-filter{
+        position: absolute;
+        top: 0;
+        background-color: #A7D2C0;;
+        transition: all .6s ;
+        transform: translate(100%, 0);
+        opacity: 0;
+        height: 100%;
+        width: 90vw;
+    }
+
+    .search-filter.open{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    .search-filter i{
+        display: none;
+    }
+
+    .search-filter .search-box{
+        box-shadow: none;
+    }
+
+    .app-header .menu-btn{
+        padding-left: 1em;
+    }
+
+    .app-header .back-btn{
+        position: absolute;
+        left: 26px;
+    }
+
+    .app-header .search-btn{
+        display: block;
+        position: absolute;
+        right: 26px;
+    }
+}
