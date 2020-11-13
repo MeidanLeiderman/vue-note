@@ -23,7 +23,7 @@
     flex-direction: row;
     align-items: center;
     position: relative;
-    height: 3em;
+    height: 54px;
     outline: none;
     font-family: Lato;
 }
@@ -38,6 +38,7 @@
     box-shadow: 0px 1px 7px rgba(0,0,0, 0.25);
     border-radius: 5px;
     width: 100%;
+    font-size: 1.2em;
 }
 
 .search-filter[placeholder]{
@@ -61,7 +62,6 @@
     transform: translate(-100%, 0);
     transition: all .6s ;
     opacity: 0;
-
 }
 
 .navbar.navbar-open{
@@ -90,8 +90,6 @@
 
     .search-filter{
         margin-left: 4em;
-        width: 400px;
-        width: 50%;
     }
 
     .search-filter .search-box{
@@ -115,13 +113,14 @@
     }
 
     .search-filter{
-        position: absolute;
+        position: fixed;
+        right: 0;
         top: 0;
         background-color: #A7D2C0;;
         transition: all .6s ;
         transform: translate(100%, 0);
         opacity: 0;
-        height: 100%;
+        /* height: 100%; */
         width: 90vw;
     }
 

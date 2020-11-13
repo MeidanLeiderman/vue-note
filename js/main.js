@@ -2,6 +2,8 @@
 
 import theRouter from './router.js'
 import appHeader from './app-header.js'
+import '../lib/vue-touch-events.js'
+
 
 
 let keepApp ={
