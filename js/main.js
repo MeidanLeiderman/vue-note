@@ -4,7 +4,8 @@ import theRouter from './router.js'
 import appHeader from './app-header.js'
 import '../lib/vue-touch-events.js'
 
-import VueYouTubeEmbed from '../node_modules/vue-youtube-embed/lib/vue-youtube-embed.js'
+import VueYouTubeEmbed from '../lib/vue-youtube-embed.js'
+
 Vue.use(VueYouTubeEmbed)
 
 
