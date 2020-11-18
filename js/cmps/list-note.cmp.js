@@ -9,16 +9,18 @@ export default {
         toEdit: Boolean
     },
     template: `
-    <section v-if="note" class="note-container" :style="{'background-color': noteToEdit.color}" @mouseover="isHover=true" @mouseleave="isHover=false">
-        <div class="list-line-container" v-for="(line, index) in noteToEdit.content" :key="index" >
-            <input type="checkbox" class="regular-checkbox" :checked="line.state" v-model="noteToEdit.content[index].state" @change="saveNote" @click.stop>
-            <div class="line" :contenteditable="toEdit" :ref="'line' + index" @focusout="save($event, index)" @keyup="checkShowAddLine($event, index)" :style="line.state && isCrossedOver" v-html="line.line"></div>
-            <i class="fas fa-times" @click.stop="removeLine(index)" title="remove line"></i>
+    <section v-if="note" class="note-container flex column space-between" :style="{'background-color': noteToEdit.color || 'white'}" @mouseover="isHover=true" @mouseleave="isHover=false">
+        <div class="list-section-container">
+            <div class="list-line-container" v-for="(line, index) in noteToEdit.content" :key="index" >
+                <input type="checkbox" class="regular-checkbox" :checked="line.state" v-model="noteToEdit.content[index].state" @change="saveNote" @click.stop>
+                <div class="line" :contenteditable="toEdit" :ref="'line' + index" @focusout="save($event, index)" @keyup="checkShowAddLine($event, index)" :style="line.state && isCrossedOver" v-html="line.line"></div>
+                <i class="fas fa-times" @click.stop="removeLine(index)" title="remove line"></i>
+            </div>
+            <hr v-if="toEdit && showAddLine">
+            <div v-if="toEdit && showAddLine" class="temp-line" :contenteditable="true" @click="addLine(); lineFocused();">Add an item</div>
+            <hr v-if="toEdit && showAddLine">
         </div>
-        <hr v-if="toEdit && showAddLine">
-        <div v-if="toEdit && showAddLine" class="temp-line" :contenteditable="true" @click="addLine(); lineFocused();">Add an item</div>
-        <hr v-if="toEdit && showAddLine">
-        <note-toolbar :class="toggleEditor" :toEdit="toEdit" @saveNote="completeEdits" @removeNote="removeNote" @changeBackgroundColor="changeBackgroundColor" @pinNote="setPinStatus"/>
+        <note-toolbar :class="toggleEditor" :toEdit="toEdit" @saveNote="completeEdits" @removeNote="removeNote" @changeBackgroundColor="changeBackgroundColor" @pinNote="setPinStatus" @duplicate="duplicateNote"/>
     </section>
 `,
     created(){
@@ -51,7 +53,8 @@ export default {
             else{
                 // do not save empty notes
                 if (!this.noteToEdit.id && this.noteToEdit.content.every(line=>!line.line)) this.$emit('note-edit')
-                if (this.toEdit && this.editComplete) this.$emit('note-edit', this.noteToEdit, true)
+                else if (!this.editComplete) this.$emit('note-edit', this.noteToEdit, false)
+                else if (this.editComplete) this.$emit('note-edit', this.noteToEdit, true)
             }
         },
         removeNote() {
@@ -63,6 +66,9 @@ export default {
             }
             else noteService.removeNote(this.noteToEdit.id)
         },
+        duplicateNote(){
+            noteService.duplicateNote(this.noteToEdit)
+        },
         removeLine(index){
             this.noteToEdit.content.splice(index, 1)
             this.saveNote()
@@ -73,6 +79,8 @@ export default {
         save(e, index){
             if(this.toEdit){
                 this.noteToEdit.content[index].line = e.target.textContent
+                if(!this.noteToEdit.id) return
+                this.saveNote()
             }
         },
         async lineFocused() {

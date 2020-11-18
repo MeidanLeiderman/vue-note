@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             color: null,
-            colorChoices:['#F28B82','#E6C9A8','#FBBC04','#A7FFEB','#AECBFA','#D7AEFB','#CBF0F8','#CCFF90','#FDCFE8']
+            colorChoices:['#F28B82','#E6C9A8','#FBBC04','#A7FFEB','#AECBFA','#D7AEFB','#CBF0F8','#CCFF90','#FDCFE8','white']
         }
     },
     created(){

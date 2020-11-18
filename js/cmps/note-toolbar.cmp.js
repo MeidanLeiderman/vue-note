@@ -7,9 +7,10 @@ Vue.component('noteToolbar', {
         toEdit: Boolean
     },
     template: `
-        <section class="note-toolbar-container flex row">
-            <i class="fas fa-palette fa-lg" @mouseover="chooseColor=true" @mouseleave="chooseColor=false" @click.stop="openPalette" v-touch:tap="openPalette"></i>
+        <section class="note-toolbar-container">
+            <i class="fas fa-palette fa-lg" @mouseover="chooseColor=true" @mouseleave="chooseColor=false" @click.stop="openPalette" v-touch:tap.prevent="openPalette"></i>
             <i class="fas fa-thumbtack fa-lg" title="pin this note" @click.stop="$emit('pinNote')"></i>
+            <i class="fas fa-copy fa-lg" title="make a copy" @click.stop="$emit('duplicate')"></i>
             <i class="fas fa-trash-alt fa-lg" title="remove this note" @click.stop="$emit('removeNote')"></i>
             <colour-picker @changeColor="changeBackgroundColor" @mouseenter.native="chooseColor=true" @mouseleave.native="chooseColor=false" v-if="chooseColor"/>
             <span v-show="toEdit" @click.stop="$emit('saveNote')">Finish</span>

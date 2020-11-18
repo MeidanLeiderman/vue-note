@@ -3,6 +3,7 @@
 import { utilService } from './util-service.js'
 
 export default {
+    duplicateNote,
     createNote,
     editNote,
     removeNote,
@@ -48,6 +49,13 @@ function removeNote(id) {
     utilService.saveToStorage(NOTES_KEY, gNotes)
 }
 
+function duplicateNote(note){
+    let {type, content, color, pinned} = note
+    let newNote = createNote(type, content, color, pinned)
+    gNotes.unshift(newNote)
+    utilService.saveToStorage(NOTES_KEY, gNotes)
+}
+
 function queryNote(id) {
     let notes = utilService.loadFromStorage(NOTES_KEY)
     let index = notes.findIndex(note => note.id === id)
@@ -57,11 +65,9 @@ function queryNote(id) {
 function queryNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY)
     if (!notes) {
-        notes = [createNote('textNote', 'Andy Barefoot wrote up a great guide. The trick is setting up repeating grid rows that are fairly short, letting the elements fall into the grid horizontally as they may, then adjusting their heights to match the grid with some fairly light math to calculate how many rows they should span.'), createNote('listNote', [{ line: 'lalala1', state: true }, { line: 'lolololo', state: false }]),createNote('textNote', 'lorem ipsum'), createNote('videoNote', 'https://www.youtube.com/embed/kI_069CAVCI'), createNote('textNote', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis fringilla laoreet. Mauris mattis enim ut felis consectetur, vitae lacinia enim auctor. Aenean vitae fermentum odio.'), createNote('listNote', [{ line: 'item1', state: true }, { line: 'item2', state: true }]), createNote('textNote', 'lorem ipsum'), createNote('textNote', 'lorem ipsum23'), createNote('videoNote', 'https://www.youtube.com/embed/kI_069CAVCI'), createNote('listNote', [{ line: 'item1', state: true }, { line: 'item2', state: true }])]
+        notes = [createNote('imageNote', {url: 'https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.710.1.jpg', text:'Vision'}), createNote('textNote', 'Andy Barefoot wrote up a great guide. The trick is setting up repeating grid rows that are fairly short, letting the elements fall into the grid horizontally as they may, then adjusting their heights to match the grid with some fairly light math to calculate how many rows they should span.'), createNote('listNote', [{ line: 'Finish this project', state: true }, { line: 'Move On', state: false }]),createNote('textNote', 'Without music, life would be a mistake.'), createNote('videoNote', 'https://www.youtube.com/embed/kI_069CAVCI'), createNote('textNote', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis fringilla laoreet. Mauris mattis enim ut felis consectetur, vitae lacinia enim auctor. Aenean vitae fermentum odio.'), createNote('listNote', [{ line: 'Mango', state: false }, { line: 'Bannana', state: false }, { line: 'Melon', state: false }]), createNote('textNote', 'lorem ipsum'), createNote('videoNote', 'https://www.youtube.com/embed/kI_069CAVCI')]
     }
     gNotes = notes
     utilService.saveToStorage(NOTES_KEY, gNotes)
     return gNotes
 }
-
-// createNote('textNote', 'lorem ipsum'), createNote('textNote', 'lorem ipsum23'), createNote('listNote', [{ line: 'item1', state: true }, { line: 'item2', state: true }]), createNote('textNote', 'lorem ipsum'), createNote('textNote', 'lorem ipsum23'), createNote('listNote', [{ line: 'item1', state: true }, { line: 'item2', state: true }]), createNote('videoNote', 'https://www.youtube.com/embed/kI_069CAVCI')

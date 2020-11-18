@@ -62,12 +62,12 @@
     transform: translate(-100%, 0);
     transition: all .6s ;
     opacity: 0;
+    z-index: 999;
 }
 
 .navbar.navbar-open{
     transform: translate(0, 0);
     opacity: 1;
-
 }
 
 .navbar a{
@@ -92,9 +92,6 @@
         margin-left: 4em;
     }
 
-    .search-filter .search-box{
-        /* width: 400px; */
-    }
 }
 
 @media screen and (min-width: 541px) and (max-width: 768px){
@@ -110,6 +107,8 @@
     .logo{
         padding: 10px 30px;
         order: 2;
+        position: absolute;
+        left: 36px;
     }
 
     .search-filter{
@@ -120,7 +119,6 @@
         transition: all .6s ;
         transform: translate(100%, 0);
         opacity: 0;
-        /* height: 100%; */
         width: 90vw;
     }
 
@@ -138,7 +136,8 @@
     }
 
     .app-header .menu-btn{
-        padding-left: 1em;
+        position: absolute;
+        left: 26px;
     }
 
     .app-header .back-btn{
@@ -150,5 +149,17 @@
         display: block;
         position: absolute;
         right: 26px;
+    }
+
+    .navbar{
+        height: 100vh;
+    }
+
+    .navbar>*{
+        border-bottom: 1px solid black;
+    }
+
+    .navbar a:nth-last-child(1){
+        border: none;
     }
 }

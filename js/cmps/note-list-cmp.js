@@ -5,6 +5,7 @@ import VueMasonry from '../../lib/masonry.cmp.js'
 import listNote from './list-note.cmp.js'
 import textNote from './text-note.cmp.js'
 import videoNote from './video-note.cmp.js'
+import imageNote from './img-note.cmp.js'
 import './note-toolbar.cmp.js'
 import noteService from '../services/note-service.js'
 
@@ -35,7 +36,8 @@ export default {
 `,  components: {
         listNote,
         textNote,
-        videoNote
+        videoNote,
+        imageNote
     },
     data(){
         return{

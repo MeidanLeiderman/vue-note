@@ -44,7 +44,12 @@ export default {
             else {
                 return this.notes.filter(note => {
                     let { content, type } = note;
-                    if(typeof(content)==='object') content = content.map(line=>line.line).join('-----');
+                    //have to deal with all data structures (content=object/array/string)
+                    if(Array.isArray(content)) content = content.map(line=>line.line).join('-----');
+                    if (type==='imageNote') {
+                        content = content.text
+                        console.log(content)
+                    }
                     if(noteType) {
                         var wordFilter = '' ? true : content.toLowerCase().includes(this.filterBy.q.toLowerCase()) && noteType===type
                     }
@@ -71,6 +76,9 @@ export default {
         },
         setType(type){
             this.filterBy.noteType = type
+        },
+        scrollToTop(){
+            window.scrollTo(0,0)
         }
     },
     watch: {

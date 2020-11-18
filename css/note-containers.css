@@ -3,7 +3,10 @@
     max-width: 100%;
     padding: 1em;
     border: 1px solid #DDDDDE;
+    border-radius: 10px;
     margin-bottom: 1em;
+    position: relative;
+    
 }
 
 .note-container>*{
@@ -17,6 +20,12 @@
     outline: none;
     word-wrap: break-word;
 }
+
+.note-container .text:empty:before{
+    content: "Start typing...";
+    color: grey;
+}
+
 
 /* LIST NOTES */
 .list-line-container{
@@ -40,6 +49,7 @@
 
 .temp-line{
     outline: none;
+    margin: 5px 0;
 }
 
 
@@ -52,7 +62,6 @@
 	border-radius: 1px;
 	display: inline-block;
     position: relative;
-    /* height: 0.75em; */
     margin-right: 1em;
 }
 
@@ -62,14 +71,29 @@
 
 
 .regular-checkbox:checked:after {
-	content: '\2714';
+	content: '✓';
 	font-size: 14px;
 	position: absolute;
 	top: -4px;
-	left: 0.5px;
+	left: 1px;
 	color: black;
 }
 
 .list-line-container i{
     margin: 0 0.5em;
+}
+
+/* Video-Notes */
+
+.video-note-container input{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* Image-Notes */
+.image-note-container .text{
+    margin-bottom: 10px;
+}
+.image-note-container img{
+    max-width: 100%;
 }
