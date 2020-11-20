@@ -7,11 +7,13 @@
 @import "./new-note-form.css";
 @import "./type-filter.css";
 @import "./colour-palette.css";
+@import "./about.css";
 
 /* Layout */
 
 *{
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {

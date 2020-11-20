@@ -4,7 +4,6 @@
     display: flex;
     position: relative;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     background-color: #A7D2C0;
@@ -56,10 +55,7 @@
     display: flex;
     flex-direction: column; 
     position: absolute;
-    top: 48px;
-    left: 0;
     background-color: #A7D2C0;;
-    transform: translate(-100%, 0);
     transition: all .6s ;
     opacity: 0;
     z-index: 999;
@@ -88,25 +84,55 @@
         padding: 0 40px;
     }
 
+    .logo{
+        padding: 10px 30px;
+        position: absolute;
+        left: 44px;
+    }
+
     .search-filter{
-        margin-left: 4em;
+        position: absolute;
+        right: 40px;
+    }
+
+    .navbar{
+        transform: translate(-100%, 0);
+        top: 54px;
+        left: 0;
     }
 
 }
 
 @media screen and (min-width: 541px) and (max-width: 768px){
+    .app-header{
+        padding: 0 40px;
+    }
 
+    .logo{
+        padding: 10px 30px;
+        position: absolute;
+        left: 44px;
+    }
+
+    .search-filter{
+        position: absolute;
+        right: 40px;
+    }
+
+    .navbar{
+        transform: translate(-100%, 0);
+        top: 54px;
+        left: 0;
+    }
 }
 
 @media screen and (min-width: 360px) and (max-width: 540px){
     .app-header{
         padding: 0 10px;
-        justify-content: flex-start;
     }
 
     .logo{
         padding: 10px 30px;
-        order: 2;
         position: absolute;
         left: 36px;
     }
@@ -153,6 +179,10 @@
 
     .navbar{
         height: 100vh;
+        transform: translate(-100%, 0);
+        top: 53px;
+        left: 0;
+
     }
 
     .navbar>*{

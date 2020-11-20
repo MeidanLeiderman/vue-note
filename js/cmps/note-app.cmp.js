@@ -48,7 +48,6 @@ export default {
                     if(Array.isArray(content)) content = content.map(line=>line.line).join('-----');
                     if (type==='imageNote') {
                         content = content.text
-                        console.log(content)
                     }
                     if(noteType) {
                         var wordFilter = '' ? true : content.toLowerCase().includes(this.filterBy.q.toLowerCase()) && noteType===type

@@ -49,7 +49,9 @@
 }
 
 @media screen and (min-width: 541px) and (max-width: 768px){
-
+    .note-form-container{
+        max-width: 90%;
+    }
 }
 
 @media screen and (min-width: 360px) and (max-width: 540px){
@@ -58,10 +60,6 @@
         height: 2em;
         margin-left: 10px;
         margin-right: 10px;
-        
-    }
-
-    .note-form-container .input-box{
         
     }
 }

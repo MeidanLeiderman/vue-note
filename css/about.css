@@ -1,0 +1,15 @@
+.about-section{
+    margin:20px auto;
+}
+
+@media screen and (min-width: 769px){
+    .about-section{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 540px){
+    .about-section{
+        width: 90%;
+    }
+}

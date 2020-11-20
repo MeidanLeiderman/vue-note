@@ -59,11 +59,9 @@ export default {
             var reader = new FileReader();
             reader.onload = (e) => {
                 image = e.target.result;
-                // console.log(e.target.result)
                 this.setImageNote(e.target.result)
             };
             reader.readAsDataURL(file);
-            // console.log(image)
         }
     },
     components: {

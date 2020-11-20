@@ -6,6 +6,7 @@ export default {
     name: 'appHeader',
     template: `
     <section class="app-header">
+        <i class="fas fa-bars fa-lg menu-btn" @click="toggleMenu" v-if="!searchBar"></i>
         <h3 class="logo" v-if="!searchBar">Keep</h3>
         <note-filter :class="displaySearch" >
             <input class="search-box" type="text" @input="searchEvent" placeholder="Search" v-model="searchTerm" />
@@ -14,7 +15,6 @@ export default {
             <router-link @click.native="toggleMenu" to="/">Main</router-link>
             <router-link @click.native="toggleMenu" to="/about">About</router-link>
         </nav>
-        <i class="fas fa-bars fa-lg menu-btn" @click="toggleMenu" v-if="!searchBar"></i>
         <i class="fas fa-search fa-lg search-btn" @click="openSearch"" v-if="!searchBar"></i>
         <i class="fas fa-arrow-left fa-lg back-btn" @click="closeSearch" v-if="searchBar"></i>
     </section>
