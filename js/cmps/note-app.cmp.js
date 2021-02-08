@@ -1,7 +1,6 @@
 'use strict'
 
 import noteService from '../services/note-service.js'
-
 import typeFilter from './type-filter.cmp.js'
 import noteList from './note-list-cmp.js'
 import newNoteForm from './new-note-cmp.js'

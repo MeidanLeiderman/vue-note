@@ -85,9 +85,9 @@
     }
 
     .logo{
-        padding: 10px 30px;
+        padding: 10px;
         position: absolute;
-        left: 44px;
+        left: 60px;
     }
 
     .search-filter{
@@ -109,7 +109,7 @@
     }
 
     .logo{
-        padding: 10px 30px;
+        padding: 10px;
         position: absolute;
         left: 44px;
     }
@@ -132,9 +132,9 @@
     }
 
     .logo{
-        padding: 10px 30px;
+        padding: 10px;
         position: absolute;
-        left: 36px;
+        left: 50px;
     }
 
     .search-filter{
@@ -164,6 +164,7 @@
     .app-header .menu-btn{
         position: absolute;
         left: 26px;
+        cursor: pointer;
     }
 
     .app-header .back-btn{
